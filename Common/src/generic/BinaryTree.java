@@ -1,16 +1,13 @@
 package generic;
 
 public class BinaryTree<E> {
-	Node root;
-	
-	public BinaryTree(Node node) {
-		root = node;
+	private Node<E> root;
+
+	public BinaryTree(Node<E> root) {
+		this.root = root;
 	}
-	
-	class Node {
-		E data;
-		Node left;
-		Node right;
-		
+
+	public Node<E> getRoot() {
+		return root;
 	}
 }

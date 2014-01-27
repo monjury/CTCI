@@ -1,6 +1,7 @@
 package problems;
 
-import generic.BinaryTree;
+import generic.*;
+
 
 /**
  * Given a sorted (increasing order) array, 
@@ -12,8 +13,24 @@ import generic.BinaryTree;
 public class Problem3 {
 	
 	public BinaryTree<Integer> createTree(int[] input) {
-		
-		return null;
+		Node<Integer> node = createNode(input, 0, input.length - 1);
+		BinaryTree<Integer> bTree = new BinaryTree<Integer>(node);
+		return bTree;
 	}
 	
+	private Node<Integer> createNode(int[] input, int startIndex, int endIndex) {		
+		if(startIndex > endIndex) {
+			return null;
+		}
+		
+		else if(startIndex == endIndex) {
+			return new Node<Integer>(input[startIndex], null, null);
+		}
+		else {
+			int mid = (endIndex - startIndex) / 2;
+			Node<Integer> leftNode = createNode(input, startIndex, mid - 1);
+			Node<Integer> rightNode = createNode(input, mid + 1, endIndex);
+			return new Node<Integer>(input[mid], leftNode, rightNode);
+		}
+	}
 }
