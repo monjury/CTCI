@@ -34,7 +34,4 @@ public class Problem1Test {
         boolean actual = solution.hasUniqueCharacters(input);
         Assert.assertEquals(expected, actual);
     }
-
-
-
 }
