@@ -7,22 +7,15 @@ import common.Node;
 public class Problem2 {
 
 	public Node<Integer> find(LinkedList<Integer> input, int k) {
-		
-		Node<Integer> currentNode = input.head;
-		Node<Integer> selectedNode = input.head;
 		int size = 0;
-		int handle = 0;
-		while(currentNode.next != null) {
+		Node<Integer> selectedNode = input.head;
+		Node<Integer> currentNode = input.head;
+		while (currentNode.next != null) {
 			size++;
-			if(size % (2*k) == 0) {
-				handle = size;
-				selectedNode = currentNode;
+			if (size > k) {
+				selectedNode = selectedNode.next;
 			}
 			currentNode = currentNode.next;
-		}
-		while(size - handle > k) {
-			handle++;
-			selectedNode = selectedNode.next;
 		}
 		return selectedNode;
 	}
