@@ -34,4 +34,36 @@ public class Problem1Test {
         boolean actual = solution.hasUniqueCharacters(input);
         Assert.assertEquals(expected, actual);
     }
+    
+    @Test(timeout = 200)
+    public void testCase2() {
+        String input = null;
+        boolean expected = true;
+        boolean actual = solution.hasUniqueCharacters(input);
+        Assert.assertEquals(expected, actual);
+    }
+    
+    @Test(timeout = 200)
+    public void testCase3() {
+        String input = "";
+        boolean expected = true;
+        boolean actual = solution.hasUniqueCharacters(input);
+        Assert.assertEquals(expected, actual);
+    }
+    
+    @Test(timeout = 200)
+    public void testCase4() {
+        String input = "aaa";
+        boolean expected = false;
+        boolean actual = solution.hasUniqueCharacters(input);
+        Assert.assertEquals(expected, actual);
+    }
+    
+    @Test(timeout = 200)
+    public void testCase5() {
+        String input = "12345";
+        boolean expected = true;
+        boolean actual = solution.hasUniqueCharacters(input);
+        Assert.assertEquals(expected, actual);
+    }
 }
